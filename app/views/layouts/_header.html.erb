@@ -1,0 +1,17 @@
+
+
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <nav>
+    	<% if %>
+  <% user_signed_in? %>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "The club",   '/' %></li>
+        <% else %>
+        <li><%= link_to "Register", new_user_registration_path %></li>
+        <li><%= link_to "Log in", new_user_session_path %></li>
+      </ul>
+      <% end %>
+    </nav>
+  </div>
+</header>

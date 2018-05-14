@@ -1,0 +1,42 @@
+
+<% if %>
+  <% user_signed_in? %>
+
+<div class="center jumbotron">
+<div class="container">
+
+     <li>
+     <h1> <%= "Bienvenue " + current_user.name %></h1>
+    </li>
+
+    
+      <%= link_to "Enter in da club", users_club_path, class: "btn btn-lg btn-success" %>
+   </li><br><br>
+
+   <li>
+     <%= link_to "Modify account", edit_user_registration_path, class: "btn btn-lg btn-primary" %> 
+   </li><br><br>
+
+   <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-lg btn-warning" %>
+   </li><br><br>
+
+
+
+<% else %>
+
+<div class="center jumbotron">
+<div class="container">
+<h1> Coucou ! </h1>
+
+  
+    <%= link_to "Create account", new_user_registration_path, class: "btn btn-lg btn-primary" %> OU
+  
+
+  
+    <%= link_to "Log in", new_user_session_path, class: "btn btn-lg btn-primary" %>
+  
+
+    <% end %>
+
+</div></div>
+
